@@ -2,9 +2,13 @@
   "common": {
     "username": "Username",
     "usernamePlaceholder": "user_daffy",
-    "password": "Password"
+    "password": "Password",
+    "required": "Required field",
+    "invalidMinLength": "{{requiredLength}} minimum characters",
+    "invalidMaxLength": "{{requiredLength}} minimum characters",
+    "passwordInvalidPattern": "Type at least one digit, one uppercase, one lowercase letter and a character among @#$%"
   },
   "signin": {
-
+    "action": "Sign in"
   }
 }

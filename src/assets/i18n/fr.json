@@ -2,9 +2,14 @@
   "common": {
     "username": "Nom d'utilisateur",
     "usernamePlaceholder": "user_daffy",
-    "password": "Mot de passe"
+    "password": "Mot de passe",
+    "cancel": "Annuler",
+    "required": "Champ obligatoire",
+    "invalidMinLength": "{{requiredLength}} caractères minimum",
+    "invalidMaxLength": "{{requiredLength}} caractères maximum",
+    "passwordInvalidPattern": "Entrez au moins un numéro, une lettre majuscule, minuscule et un caractère parmi @#$%"
   },
   "signin": {
-
+    "action": "Se connecter"
   }
 }

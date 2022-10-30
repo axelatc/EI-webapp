@@ -1,0 +1,24 @@
+<form class="signin-form" [formGroup]="formGroup" (ngSubmit)="signin()">
+  <mat-form-field *ngIf="formGroup.get('username') as control">
+    <mat-label>{{ 'common.username' | translate }}</mat-label>
+    <input type="text" matInput [formControlName]="'username'" maxlength="{{usernameMaxLength}}" required>
+    <mat-hint>{{ control.value!.length}} / {{usernameMaxLength}}</mat-hint>
+    <mat-error *ngIf="control.hasError('required')">{{ 'common.required' | translate }}</mat-error>
+    <mat-error *ngIf="control.hasError('minlength')">{{ 'common.invalidMinLength' | translate:control.getError('minlength') }}</mat-error>
+<!--    <mat-error *ngIf="control.hasError('maxlength')">{{ 'common.invalidMaxLength' | translate:control.getError('maxlength') }}</mat-error>-->
+  </mat-form-field>
+  <mat-form-field *ngIf="formGroup.get('password') as control">
+    <mat-label>{{ 'common.password' | translate }}</mat-label>
+    <input matInput [formControlName]="'password'" maxlength="{{passwordMaxLength}}" type="{{hidePassword ? 'password' : 'text'}}" required>
+    <button mat-button mat-icon-button matSuffix (click)="hidePassword = !hidePassword">
+      <mat-icon>{{ hidePassword ? 'visibility_off' : 'visibility' }}</mat-icon>
+    </button>
+    <mat-hint>{{ control.value!.length}} / {{passwordMaxLength}}</mat-hint>
+    <mat-error *ngIf="control.hasError('required')">{{ 'common.required' | translate }}</mat-error>
+    <mat-error *ngIf="control.hasError('minlength')">{{ 'common.invalidMinLength' | translate:control.getError('minlength') }}</mat-error>
+<!--    <mat-error *ngIf="control.hasError('maxlength')">{{ 'common.invalidMaxLength' | translate:control.getError('maxlength') }}</mat-error>-->
+    <mat-error *ngIf="!control.hasError('minlength') && !control.hasError('maxlength') && control.hasError('pattern')">{{ 'common.passwordInvalidPattern' | translate }}</mat-error>
+  </mat-form-field>
+  <button type="submit" [disabled]="!formGroup.valid" mat-raised-button color="primary">{{ 'signin.action' | translate }}</button>
+</form>
+
