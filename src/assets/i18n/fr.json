@@ -1,0 +1,10 @@
+{
+  "common": {
+    "username": "Nom d'utilisateur",
+    "usernamePlaceholder": "user_daffy",
+    "password": "Mot de passe"
+  },
+  "signin": {
+
+  }
+}
